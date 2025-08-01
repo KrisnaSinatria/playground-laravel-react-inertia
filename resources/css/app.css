@@ -1,3 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Urbanist", sans-serif;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    background-color: #2fb3e3;
+}
+
+.body-login{
+    @apply h-screen !important;
+}
+
+body.swal2-height-auto{
+    @apply h-screen !important;
+}
+
+.swiper-scrollbar {
+    background-color: #2fb3e3;
+}
+
+.swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #2fb3e3;
+}
+
+.container {
+    width: 90%;
+}
+
+.navbar-fixed {
+    @apply fixed  z-[9999];
+}
+
+.nav-class {
+    @apply xl:text-sm mx-3 lg:mx-4 xl:mx-6 flex py-2 z-50 text-black md:text-white md:text-xs xl:font-bold relative before:absolute before:bottom-0 before:h-[2px] before:w-0 md:before:bg-primary before:transition-all group-hover:before:w-full;
+}
+
+.profil-class{
+    @apply  text-black font-semibold;
+  }
+
+  .profil-item{
+    @apply  px-6 py-4 border-b-[0.8px] border-gray-500 w-full;
+  }
+
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.color-service {
+    filter: invert(8%) sepia(39%) saturate(717%) hue-rotate(158deg)
+        brightness(100%) contrast(103%);
+}
+
+.notification-tab > .active {
+    @apply text-blue-500 border-b-blue-500 hover:text-blue-500;
+}
+.order-tab > .active {
+    @apply bg-blue-500 text-white hover:text-white;
+}
+.main.active {
+    @apply md:w-full md:ml-0;
+}
+
+.jantuk {
+    @apply overflow-x-auto mt-6 md:mt-0;
+}
+
+.jantuk::-webkit-scrollbar {
+    display: none;
+}
+
+.dt-search > label {
+    @apply hidden;
+}
+
+.dt-layout-row {
+    @apply hidden;
+}
+
+.dt-search {
+    @apply hidden;
+}
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important; 
+    height: 40px !important;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 6px !important;
+  right: 4px !important;
+  width: 20px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 12px !important;
+  padding-right: 20px;
+  @apply my-auto !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select2 {
+    @apply h-10;
+}
+
+.select2-container {
+    @apply h-10;
+}
+
+.selection {
+    @apply h-10 block;
+}
+
+.btn-primary {
+    @apply bg-primary flex justify-center items-center gap-2 w-fit text-white px-4 py-2 text-sm rounded-full  hover:brightness-110 duration-300 box-border;
+  }
+.paragraf{
+  @apply text-sm text-abu dark:text-[rgba(255,255,255,0.65)] 2xl:text-base;
+}
+.subtitle{
+  @apply text-[25px] font-bold text-warnaHitam dark:text-primaryDark line-clamp-1
+}
+.border-card{
+  @apply border-[1.5px] border-stroke dark:border-strokeDark rounded-full ;
+}
+.card{
+  @apply w-full sm:w-[48%] lg:w-[32%] border-[1.5px] border-stroke dark:border-strokeDark rounded-3xl p-5
+}
+.title{
+  @apply md:text-[35px] text-[22px] font-bold dark:text-primaryDark
+}
+.title-testi{
+  @apply lg:text-[35px] md:text-[30px] text-[22px] font-bold dark:text-primaryDark
+}
+.swiper-scrollbar{
+  background-color:#D28F51;
+}
+
+.swiper-scrollbar .swiper-scrollbar-drag{
+background-color:#D28F51;
+}
+
+.swiper-scrollbar{
+  @apply w-[40%] bottom-0 left-1/2 -translate-x-1/2 !important;
+}
+
+
+.swiper-free-mode > .swiper-wrapper{
+  transition-timing-function : linear !important;
+}
+
+#navbar {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+.custom-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 2px;
+  background: #dbdbdb;
+}
+
+.custom-bullet-active {
+  background: rgba(90,209,45,1);
+  width: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+
+
+.container{
+  width: 85%;
+}
+
+.paragraf-footer{
+  @apply duration-300 text-sm text-abu hover:text-primary dark:hover:text-primary dark:text-[rgba(255,255,255,0.65)];
+}
+.nav-class{
+  @apply sm:mx-2 lg:mx-4 w-fit flex items-center justify-center py-3 group-hover:text-primary z-50;
+}
+
+
+.apexcharts-bar-area .apexcharts-backgroundBar {
+  @apply rounded-3xl !important; 
+}
+

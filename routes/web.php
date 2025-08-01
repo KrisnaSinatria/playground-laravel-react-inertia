@@ -10,7 +10,11 @@ use App\Http\Controllers\ProfileController;
 Route::get('/login',  [LoginController::class, 'index'])->name('login');
 Route::post('/login',  [LoginController::class, 'authenticate']);
 
-Route::get('/',  [TestController::class, 'index']);
+Route::get('/', function () {
+    return 'test';
+});
+
+Route::resource('/dashboard/student', StudentController::class);
 
 
 
