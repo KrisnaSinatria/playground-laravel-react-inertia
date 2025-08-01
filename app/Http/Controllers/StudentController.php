@@ -43,12 +43,9 @@ class StudentController extends Controller
             'number' => [
             'required',
             'numeric',
-            Rule::unique('students', 'number')->whereNull('deleted_at')->where(function ($query) use ($request) {
-                return $query->where('created_by', $request->user()->id); 
-            }),
+            Rule::unique('students', 'number')->whereNull('deleted_at'),
         ],
         ]);
-        $validatedData['created_by'] = Auth::id();
         Student::create($validatedData);
        return redirect('/dashboard/student')->with('createStudent', 'pembuatan murid berhasil');
     }
@@ -88,11 +85,8 @@ class StudentController extends Controller
                 'required',
                 'numeric',
                 Rule::unique('students', 'number')
-                    ->ignore($student->id) // Mengabaikan ID student yang sedang diedit
-                    ->whereNull('deleted_at') // Memastikan data yang sudah dihapus tidak diperhitungkan
-                    ->where(function ($query) use ($request) {
-                        return $query->where('created_by', $request->user()->id); // Menambahkan kondisi created_by
-                    }),
+                    ->ignore($student->id) 
+                    ->whereNull('deleted_at') ,
             ],
             'slug_name' => '',
         ]);
