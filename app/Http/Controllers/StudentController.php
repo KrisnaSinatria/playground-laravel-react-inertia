@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
-
+use Inertia\Inertia;
 
 class StudentController extends Controller
 {
@@ -17,7 +17,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('dashboard.student.index',[
+        return Inertia::render('Index',[
             'students' => Student::all()
         ]);
     }
@@ -27,9 +27,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('dashboard.student.create',[
-            
-        ]);
+        return Inertia::render('Create');
     }
 
     /**
@@ -39,7 +37,6 @@ class StudentController extends Controller
     {   
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug_name' => '',
             'number' => [
             'required',
             'numeric',

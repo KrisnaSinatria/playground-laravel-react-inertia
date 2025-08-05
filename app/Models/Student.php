@@ -11,19 +11,19 @@ use Illuminate\Support\Facades\Auth;
 
 class Student extends Model
 {
-    use Sluggable, SoftDeletes;
+    use SoftDeletes;
     protected $guarded = ['id'];
 
-    public function getRouteKeyName(){
-        return 'slug_name';
-    }
+    // public function getRouteKeyName(){
+    //     return 'slug_name';
+    // }
 
-    public function sluggable(): array
-    {
-        return [
-            'slug_name' => [
-                'source' => 'name'
-            ]
-        ];
-    }
+    // public function sluggable(): array
+    // {
+    //     return [
+    //         'slug_name' => [
+    //             'source' => 'name'
+    //         ]
+    //     ];
+    // }
 }

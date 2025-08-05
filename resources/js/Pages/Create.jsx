@@ -1,11 +1,11 @@
 import Sidebar from "../Layouts/Sidebar";
-import Student from "../components/Student/Index";
+import Create from "../Components/Student/Create";
 
 const Home = () => {
   return (
     <>
       <Sidebar />
-      <Student />
+      <Create />
       {/* <Task /> */}
     {/*  */}
     </>

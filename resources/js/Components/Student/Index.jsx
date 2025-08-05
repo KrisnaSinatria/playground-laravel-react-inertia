@@ -1,8 +1,11 @@
 import { useTheme } from "../../Utils/theming"
 import { useSidebar } from '../../Utils/theming'
 import { Bars3Icon } from '@heroicons/react/24/solid'
+import { Link } from '@inertiajs/react'
 
-const Task = () => {
+
+
+const Student = ({ students }) => {
     const { theme, toggleTheme } = useTheme();
     useSidebar();
     return (
@@ -48,10 +51,10 @@ const Task = () => {
 
                             <div className="flex justify-between mt-4 xl:mt-6 items-center mb-1 xl:mb-2">
                                 <h1 className="font-semibold text-base xl:text-lg text-nowrap">Data Murid</h1>
-                                <a href="/dashboard/income/create"
+                                <Link href="/dashboard/student/create"
                                     className="font-medium text-xs xl:text-sm tracking-wide block bg-primary rounded-sm text-white px-2 xl:px-4 py-2.5">
                                     <p className=" line-clamp-1">Buat Murid Baru</p>
-                                </a>
+                                </Link>
                             </div>
                             <div className="table-wrap">
                                 <table id="example" data-ordering="false"
@@ -71,15 +74,17 @@ const Task = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {students.map((student, index) => (
                                         <tr className="justify-between text-left">
                                             <td className="py-3 text-[16px]">
-                                                <p className="text-left pr-6"></p>
+                                                <p className="text-left pr-6">{index}</p>
                                             </td>
                                             <td className="py-3 text-[16px]">
-                                                <p className="text-left pr-6 text-nowrap"></p>
+                                                <p className="text-left pr-6 text-nowrap">{student.number}</p>
                                             </td>
                                             <td className="py-3 text-[16px] max-w-[90px]">
                                                 <p className="text-left pr-6 max-w-40 break-words truncate">
+                                                    {student.name}
                                                 </p>
                                             </td>
                                             <td className="py-3 text-[16px] flex gap-2 w-32 items-start">
@@ -101,6 +106,7 @@ const Task = () => {
                                                 </form>
                                             </td>
                                         </tr>
+                                             ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -112,4 +118,4 @@ const Task = () => {
     );
 };
 
-export default Task;
+export default Student;
